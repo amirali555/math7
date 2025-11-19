@@ -1,0 +1,74 @@
+/* ساده، راست‌چین و قابل خواندن روی موبایل */
+:root{
+  --accent:#0077cc;
+  --bg:#f6f9fc;
+  --card:#ffffff;
+  --danger:#e75a4a;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Tahoma", "Vazirmatn", sans-serif;
+  background:var(--bg);
+  direction:rtl;
+  color:#222;
+}
+
+.app{max-width:1100px;margin:12px auto;padding:10px}
+
+header{
+  display:flex;justify-content:space-between;align-items:center;
+  background:var(--accent);color:#fff;padding:14px;border-radius:10px;
+}
+.brand h1{margin:0;font-size:22px}
+.brand p{margin:2px 0 0;font-size:13px;opacity:0.9}
+.user{font-weight:bold}
+
+main{display:flex;gap:12px;margin-top:12px;align-items:flex-start}
+.sidebar{width:260px}
+.content{flex:1;display:flex;gap:12px}
+.right-panel{width:260px}
+
+.card{background:var(--card);padding:12px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.05)}
+.lesson-item{padding:8px;border-radius:8px;margin-bottom:6px;cursor:pointer}
+.lesson-item:hover{background:rgba(0,0,0,0.03)}
+.lesson-item.active{background:linear-gradient(90deg,var(--accent),#005fa3);color:#fff}
+
+.progress-wrap{margin-bottom:12px}
+.progress-label{font-size:13px;margin-bottom:6px}
+.progress-bar{background:#eee;border-radius:8px;height:12px;overflow:hidden}
+.progress-bar > div{height:100%;width:0;background:linear-gradient(90deg,var(--accent),#00a0ff);transition:width .5s}
+#progressText{text-align:center;margin-top:6px;font-weight:bold}
+
+.badges{margin-top:12px}
+.badge{display:inline-block;padding:6px 8px;border-radius:8px;margin:4px;background:#f0f6ff;font-size:12px}
+
+.card h2, .card h3{margin-top:0}
+.examples{margin-top:8px}
+.examples p{margin:6px 0}
+
+.exercise{margin-top:12px}
+
+.controls{display:flex;gap:8px;margin-top:12px}
+.btn{background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;border:none;cursor:pointer}
+.btn.ghost{background:#f0f4f8;color:#111;border:1px solid #ddd}
+.btn.danger{background:var(--danger)}
+.btn:active{transform:translateY(1px)}
+
+input[type="text"]{padding:6px;border-radius:6px;border:1px solid #ddd}
+.option{display:block;padding:8px;margin:6px 0;border-radius:8px;border:1px solid #e6e6e6;cursor:pointer}
+.option.correct{background:#e7fbe7;border-color:#88d788}
+.option.wrong{background:#ffe7e7;border-color:#ff9a9a}
+
+.timer{font-size:20px;text-align:center;font-weight:bold}
+
+footer{margin-top:12px;text-align:center;color:#555;font-size:13px}
+
+/* واکنشگرا */
+@media (max-width:900px){
+  .app{padding:6px}
+  main{flex-direction:column}
+  .sidebar,.right-panel{width:100%}
+}
