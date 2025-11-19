@@ -1,88 +1,71 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ریاضی کلاس هفتم — آموزشی</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ریاضی‌دان - آموزش ریاضی هفتم</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app">
+
     <header>
-      <div class="brand">
-        <h1>ریاضی هفتم</h1>
-        <p>خلاصه، بازی‌وار و آمادهٔ پژوهش</p>
-      </div>
-      <div class="user">
-        <div>امتیاز: <span id="score">0</span></div>
-        <div>مرحله: <span id="level">1</span></div>
-      </div>
+        <h1>ریاضی‌دان</h1>
+        <p>آموزش خلاصه و مفهومی ریاضی هفتم</p>
     </header>
 
-    <main>
-      <aside class="sidebar">
-        <div class="progress-wrap">
-          <div class="progress-label">درصد پیشرفت</div>
-          <div class="progress-bar"><div id="progressFill"></div></div>
-          <div id="progressText">0%</div>
+    <section class="menu">
+        <a class="btn" href="#lessons">درس‌ها</a>
+        <a class="btn" href="#quiz">تست آنلاین</a>
+    </section>
+
+    <section id="lessons">
+        <h2>درس‌ها</h2>
+
+        <div class="card">
+            <h3>🔢 فصل ۱ — عددنویسی</h3>
+            <p>تبدیل اعداد، شمارش، اعداد گویا</p>
         </div>
 
-        <nav class="lessons-list" id="lessonsList">
-          <!-- لیست درس‌ها توسط JS پر می‌شود -->
-        </nav>
-
-        <div class="badges">
-          <h4>نشان‌ها</h4>
-          <div id="badgesContainer"></div>
-        </div>
-      </aside>
-
-      <section class="content">
-        <div id="lessonView" class="card">
-          <!-- محتوای درس -->
-          <h2 id="lessonTitle">انتخاب یک درس از لیست</h2>
-          <div id="lessonSummary"></div>
-
-          <div class="examples card" id="examples"></div>
-
-          <div class="exercise card" id="exerciseArea"></div>
-
-          <div class="controls">
-            <button id="startQuizBtn" class="btn">شروع تمرین</button>
-            <button id="nextLessonBtn" class="btn ghost">درس بعدی</button>
-            <button id="resetProgressBtn" class="btn danger">ریست پیشرفت</button>
-          </div>
+        <div class="card">
+            <h3>✖️ فصل ۲ — توان</h3>
+            <p>توان‌های طبیعی، توان‌های منفی، محاسبه سریع</p>
         </div>
 
-        <aside class="right-panel">
-          <div class="scoreboard card">
-            <h3>امتیازدهی</h3>
-            <p>هر پاسخ درست: <strong>+10</strong></p>
-            <p>پاسخ نادرست: <strong>-3</strong></p>
-            <p>پاسخ سریع (زیر 10 ثانیه): <strong>+5</strong> اضافه</p>
-            <p>سری درست‌ها (streak 5): <strong>مدال</strong></p>
-          </div>
+        <div class="card">
+            <h3>📐 فصل ۳ — هندسه</h3>
+            <p>زاویه‌ها، چندضلعی‌ها، مساحت</p>
+        </div>
 
-          <div class="timer card">
-            <h3>زمان پاسخ</h3>
-            <div id="timer">۰۰:۰۰</div>
-          </div>
+        <div class="card">
+            <h3>🧮 فصل ۴ — جبر</h3>
+            <p>متغیر، عبارت جبری، ساده‌سازی</p>
+        </div>
 
-          <div class="extras card">
-            <h3>امکانات</h3>
-            <button id="exportBtn" class="btn">خروجی پیشرفت</button>
-            <button id="importBtn" class="btn ghost">بارگذاری پیشرفت</button>
-            <input type="file" id="importFile" style="display:none">
-          </div>
-        </aside>
-      </section>
-    </main>
+        <div class="card">
+            <h3>🎲 فصل ۵ — احتمال</h3>
+            <p>پیشامد، احتمال ساده، نمودار درختی</p>
+        </div>
+    </section>
 
-    <footer>
-      <p>برای تبدیل به اپ اندروید: از WebView استفاده کن (دستورالعمل در پایین).</p>
-    </footer>
-  </div>
+    <section id="quiz">
+        <h2>تست آنلاین</h2>
 
-  <script src="script.js"></script>
+        <div class="quiz-box">
+            <p>۱) حاصل ۲² چیست؟</p>
+            <button onclick="check(1, 'correct')">۴</button>
+            <button onclick="check(1, 'wrong')">۲</button>
+            <button onclick="check(1, 'wrong')">۸</button>
+
+            <p>۲) احتمال آمدن شیر در پرتاب سکه؟</p>
+            <button onclick="check(2, 'correct')">۱/۲</button>
+            <button onclick="check(2, 'wrong')">۱</button>
+            <button onclick="check(2, 'wrong')">۰</button>
+
+            <p id="result"></p>
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
