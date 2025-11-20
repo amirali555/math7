@@ -1,71 +1,78 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ریاضی‌دان - آموزش ریاضی هفتم</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ریاضی‌دان — آموزش ریاضی هفتم</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-    <header>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
         <h1>ریاضی‌دان</h1>
-        <p>آموزش خلاصه و مفهومی ریاضی هفتم</p>
+        <p>آموزش خلاصه و تمرین‌های تعاملی — پایه هفتم</p>
+      </div>
+      <div class="meta">
+        <div>امتیاز: <span id="score">0</span></div>
+        <div>پیشرفت: <span id="progressPercent">0%</span></div>
+      </div>
     </header>
 
-    <section class="menu">
-        <a class="btn" href="#lessons">درس‌ها</a>
-        <a class="btn" href="#quiz">تست آنلاین</a>
-    </section>
+    <main>
+      <aside class="sidebar">
+        <h3>فصل‌ها</h3>
+        <nav id="lessonList"></nav>
 
-    <section id="lessons">
-        <h2>درس‌ها</h2>
-
-        <div class="card">
-            <h3>🔢 فصل ۱ — عددنویسی</h3>
-            <p>تبدیل اعداد، شمارش، اعداد گویا</p>
+        <div class="controls">
+          <button id="resetBtn" class="small danger">ریست پیشرفت</button>
+          <button id="exportBtn" class="small">خروجی پیشرفت</button>
         </div>
 
-        <div class="card">
-            <h3>✖️ فصل ۲ — توان</h3>
-            <p>توان‌های طبیعی، توان‌های منفی، محاسبه سریع</p>
+        <div class="badges">
+          <h4>نشان‌ها</h4>
+          <div id="badgesContainer"></div>
         </div>
+      </aside>
 
-        <div class="card">
-            <h3>📐 فصل ۳ — هندسه</h3>
-            <p>زاویه‌ها، چندضلعی‌ها، مساحت</p>
-        </div>
+      <section class="content">
+        <article id="lessonView" class="card">
+          <h2 id="lessonTitle">یک درس را انتخاب کن</h2>
+          <div id="lessonSummary" class="lesson-text"></div>
 
-        <div class="card">
-            <h3>🧮 فصل ۴ — جبر</h3>
-            <p>متغیر، عبارت جبری، ساده‌سازی</p>
-        </div>
+          <div id="examples" class="card small"></div>
 
-        <div class="card">
-            <h3>🎲 فصل ۵ — احتمال</h3>
-            <p>پیشامد، احتمال ساده، نمودار درختی</p>
-        </div>
-    </section>
+          <div id="exerciseArea" class="card small"></div>
 
-    <section id="quiz">
-        <h2>تست آنلاین</h2>
+          <div id="quizControls" class="controls">
+            <button id="startQuizBtn" class="btn">شروع آزمون درس</button>
+            <button id="nextLessonBtn" class="btn ghost">درس بعدی</button>
+          </div>
+        </article>
 
-        <div class="quiz-box">
-            <p>۱) حاصل ۲² چیست؟</p>
-            <button onclick="check(1, 'correct')">۴</button>
-            <button onclick="check(1, 'wrong')">۲</button>
-            <button onclick="check(1, 'wrong')">۸</button>
+        <aside class="rightPanel">
+          <div class="card">
+            <h3>زمان پاسخ</h3>
+            <div id="timer">۰۰:۰۰</div>
+          </div>
 
-            <p>۲) احتمال آمدن شیر در پرتاب سکه؟</p>
-            <button onclick="check(2, 'correct')">۱/۲</button>
-            <button onclick="check(2, 'wrong')">۱</button>
-            <button onclick="check(2, 'wrong')">۰</button>
+          <div class="card">
+            <h3>راهنمای سریع</h3>
+            <ul class="help">
+              <li>هر پاسخ درست: +۱۰ امتیاز</li>
+              <li>پاسخ غلط: −۳ امتیاز</li>
+              <li>پاسخ سریع (زیر ۱۰ ثانیه): +۵ امتیاز اضافه</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+    </main>
 
-            <p id="result"></p>
-        </div>
+    <footer>
+      <p>© ریاضی‌دان — آمادهٔ تبدیل به اپ با WebView</p>
+    </footer>
+  </div>
 
-    </section>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
