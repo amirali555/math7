@@ -1,40 +1,30 @@
-:root{
-  --accent:#0b6bd6;
-  --bg:#f5f7fb;
-  --card:#ffffff;
-  --danger:#e45858;
-}
 *{box-sizing:border-box}
-body{
-  margin:0;font-family:"Vazirmatn",Tahoma,sans-serif;background:var(--bg);direction:rtl;color:#111;
-}
-.app{max-width:1100px;margin:12px auto;padding:12px}
-.topbar{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(90deg,var(--accent),#0a9);color:#fff;padding:14px;border-radius:10px}
-.brand h1{margin:0;font-size:22px}
-.brand p{margin:4px 0 0;font-size:13px;opacity:.95}
-.meta{font-weight:700}
+body{margin:0;font-family:"Vazirmatn",Tahoma,sans-serif;background:#fafafa;color:#111;direction:rtl}
+.app{max-width:1100px;margin:12px auto;padding:10px}
+header{display:flex;justify-content:space-between;align-items:center;background:#2b6cb0;color:#fff;padding:12px;border-radius:10px}
+header .title h1{margin:0;font-size:20px}
+header .meta{font-weight:700}
 main{display:flex;gap:12px;margin-top:12px}
-.sidebar{width:260px}
-.content{flex:1;display:flex;gap:12px}
-.rightPanel{width:260px}
-.card{background:var(--card);padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(12,24,64,0.06)}
-.lesson-text{text-align:justify;line-height:1.9}
-.small{padding:10px;font-size:14px}
-nav#lessonList .lesson-item{padding:10px;border-radius:8px;margin-bottom:8px;background:#fff;border:1px solid #ececec;cursor:pointer}
-nav#lessonList .lesson-item.active{background:linear-gradient(90deg,var(--accent),#037);color:#fff}
-.controls{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
-.btn{background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;border:none;cursor:pointer}
-.btn.ghost{background:#f0f4f9;color:#111;border:1px solid #ddd}
-.small{font-size:13px}
-.danger{background:var(--danger);color:#fff}
-#exerciseArea .option{padding:10px;margin:8px 0;border-radius:8px;background:#f1f4f8;cursor:pointer;border:1px solid #e6eaf0}
-#exerciseArea .option.correct{background:#e6ffed;border-color:#6ad38a}
-#exerciseArea .option.wrong{background:#ffecec;border-color:#ff8a8a}
-#timer{font-weight:bold;text-align:center;font-size:18px}
-.badge{display:inline-block;padding:6px 8px;border-radius:8px;margin:4px;background:#f0f8ff;font-size:13px}
+.toc{width:240px}
+.toc-btn{display:block;width:100%;padding:10px;margin-bottom:8px;background:#fff;border:1px solid #e6eefb;border-radius:8px;cursor:pointer;text-align:right}
+.toc-btn.active{background:linear-gradient(90deg,#2b6cb0,#0ea5a4);color:#fff;border:none}
+.content{flex:1}
+.step{display:none;padding:12px;background:#fff;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,23,0.05)}
+.step.active{display:block}
+.lesson-block{background:#f9fafb;padding:10px;border-radius:8px;margin:10px 0;border-left:4px solid #2b6cb0}
+.note{background:#fffbe6;padding:8px;border-radius:6px;margin-top:8px}
+.exercise{margin:12px 0;background:#fff;padding:10px;border-radius:8px;border:1px solid #eef6ff}
+input{width:100%;padding:8px;border-radius:6px;border:1px solid #e3e8ef;margin-top:6px}
+button{padding:8px 12px;border-radius:8px;border:none;background:#2b6cb0;color:#fff;cursor:pointer;margin-top:8px}
+.options button{width:32%;margin-right:2%;margin-left:0}
+.options{display:flex;justify-content:space-between;gap:6px}
+.feedback{margin-top:8px;font-weight:700}
 footer{text-align:center;margin-top:16px;color:#666;font-size:13px}
+
 /* responsive */
-@media (max-width:880px){
+@media (max-width:900px){
   main{flex-direction:column}
-  .sidebar,.rightPanel{width:100%}
+  .toc{width:100%;display:flex;overflow:auto;gap:8px}
+  .toc-btn{flex:1;white-space:nowrap}
+  .options button{width:32%}
 }
