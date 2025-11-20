@@ -1,53 +1,40 @@
-body {
-    font-family: "Vazir", sans-serif;
-    background: #f3f3f3;
-    margin: 0;
-    padding: 0;
+:root{
+  --accent:#0b6bd6;
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --danger:#e45858;
 }
-
-header {
-    text-align: center;
-    padding: 30px 10px;
-    background: linear-gradient(45deg, #5b8df1, #6cc4ff);
-    color: white;
-    border-radius: 0 0 20px 20px;
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:"Vazirmatn",Tahoma,sans-serif;background:var(--bg);direction:rtl;color:#111;
 }
-
-.menu {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 25px 0;
-}
-
-.btn {
-    background: #5b8df1;
-    padding: 12px 25px;
-    color: white;
-    text-decoration: none;
-    border-radius: 12px;
-    font-size: 18px;
-}
-
-#lessons, #quiz {
-    width: 90%;
-    margin: auto;
-}
-
-.card {
-    background: white;
-    padding: 15px;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.quiz-box button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 10px;
-    background: #e1e1e1;
-    font-size: 16px;
+.app{max-width:1100px;margin:12px auto;padding:12px}
+.topbar{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(90deg,var(--accent),#0a9);color:#fff;padding:14px;border-radius:10px}
+.brand h1{margin:0;font-size:22px}
+.brand p{margin:4px 0 0;font-size:13px;opacity:.95}
+.meta{font-weight:700}
+main{display:flex;gap:12px;margin-top:12px}
+.sidebar{width:260px}
+.content{flex:1;display:flex;gap:12px}
+.rightPanel{width:260px}
+.card{background:var(--card);padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(12,24,64,0.06)}
+.lesson-text{text-align:justify;line-height:1.9}
+.small{padding:10px;font-size:14px}
+nav#lessonList .lesson-item{padding:10px;border-radius:8px;margin-bottom:8px;background:#fff;border:1px solid #ececec;cursor:pointer}
+nav#lessonList .lesson-item.active{background:linear-gradient(90deg,var(--accent),#037);color:#fff}
+.controls{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.btn{background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;border:none;cursor:pointer}
+.btn.ghost{background:#f0f4f9;color:#111;border:1px solid #ddd}
+.small{font-size:13px}
+.danger{background:var(--danger);color:#fff}
+#exerciseArea .option{padding:10px;margin:8px 0;border-radius:8px;background:#f1f4f8;cursor:pointer;border:1px solid #e6eaf0}
+#exerciseArea .option.correct{background:#e6ffed;border-color:#6ad38a}
+#exerciseArea .option.wrong{background:#ffecec;border-color:#ff8a8a}
+#timer{font-weight:bold;text-align:center;font-size:18px}
+.badge{display:inline-block;padding:6px 8px;border-radius:8px;margin:4px;background:#f0f8ff;font-size:13px}
+footer{text-align:center;margin-top:16px;color:#666;font-size:13px}
+/* responsive */
+@media (max-width:880px){
+  main{flex-direction:column}
+  .sidebar,.rightPanel{width:100%}
 }
