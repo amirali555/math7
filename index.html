@@ -3,143 +3,73 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ریاضی‌دان — فصل 1: راهبردهای حل مسئله</title>
+  <title>ریاضی‌دان ششم — آموزش کامل</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="app">
-    <header>
-      <div class="title">
-        <h1>ریاضی‌دان</h1>
-        <p>فصل ۱ — راهبردهای حل مسئله (تیکه‌تیکه و تعاملی)</p>
+    <header class="topbar">
+      <div class="brand">
+        <h1>ریاضی‌دان ششم</h1>
+        <p>درسنامه، مثال‌ها و تمرین‌های تعاملی — پایه ششم</p>
       </div>
-      <div class="meta">
+      <div class="status">
         <div>امتیاز: <span id="score">0</span></div>
-        <div id="progress">پیشرفت: <span id="progressPercent">0%</span></div>
+        <div>پیشرفت: <span id="progress">0%</span></div>
       </div>
     </header>
 
     <main>
-      <nav class="toc">
-        <button class="toc-btn active" data-step="intro">معرفی مسئله</button>
-        <button class="toc-btn" data-step="steps">۴ مرحله حل</button>
-        <button class="toc-btn" data-step="techniques">تکنیک‌ها</button>
-        <button class="toc-btn" data-step="examples">مثال‌ها</button>
-        <button class="toc-btn" data-step="practice">تمرین‌ها</button>
-        <button class="toc-btn" data-step="quiz">آزمون کوتاه</button>
-      </nav>
+      <aside class="sidebar">
+        <input id="search" placeholder="جستجو در درس‌ها..." />
+        <nav id="lessonList"></nav>
+
+        <div class="sidebar-controls">
+          <button id="exportBtn" class="small">خروجی پیشرفت</button>
+          <button id="resetBtn" class="small danger">ریست پیشرفت</button>
+        </div>
+
+        <div class="badges">
+          <h4>نشان‌ها</h4>
+          <div id="badges"></div>
+        </div>
+      </aside>
 
       <section class="content">
-        <article id="intro" class="step active">
-          <h2>مسئله یعنی چی؟</h2>
-          <p>مسئله یک سؤال است که: ۱) داده دارد، ۲) مجهول دارد، ۳) باید راهی پیدا کنیم که به پاسخ برسیم.</p>
-          <ul>
-            <li><strong>داده‌ها:</strong> مقادیری که در سؤال داده شده‌اند.</li>
-            <li><strong>مجهول:</strong> چیزی که باید پیدا شود.</li>
-            <li><strong>هدف:</strong> رسیدن به پاسخ منطقی و معقول.</li>
-          </ul>
-          <p class="note">مثال ساده: در یک کلاس ۳۰ نفر هستند؛ ۱۲ نفر فوتبالی‌اند. چند نفر فوتبالی نیستند؟ (۳۰ − ۱۲ = ۱۸)</p>
-        </article>
+        <article id="lessonCard" class="card">
+          <h2 id="lessonTitle">یک درس انتخاب کن</h2>
+          <div id="lessonSections"></div>
 
-        <article id="steps" class="step">
-          <h2>چهار مرحله طلایی حل مسئله</h2>
-          <ol>
-            <li><strong>شناخت مسئله:</strong> بفهم چه داده‌ای داری و چه چیزی می‌خواهی.</li>
-            <li><strong>طرح نقشه:</strong> انتخاب روش مناسب (رسم شکل، جدول، معادله، تقسیم، ضرب).</li>
-            <li><strong>اجرا:</strong> اجرای نقشه مرحله‌به‌مرحله.</li>
-            <li><strong>بررسی:</strong> نتیجه را با سؤال تطبیق بده و کنترل کن.</li>
-          </ol>
-          <div class="tip">
-            <strong>نکته:</strong> همیشه پاسخ را با روش دیگر (مثلاً جایگذاری عدد) تست کن تا مطمئن شوی.
+          <div id="examples" class="card inner"></div>
+          <div id="exercises" class="card inner"></div>
+
+          <div class="controls">
+            <button id="startQuiz" class="btn">شروع آزمون درس</button>
+            <button id="nextLesson" class="btn ghost">درس بعدی</button>
           </div>
         </article>
 
-        <article id="techniques" class="step">
-          <h2>تکنیک‌های معمول</h2>
-          <ul>
-            <li><strong>رسم شکل:</strong> مخصوص مسائل هندسی یا مسائلی که با تقسیم یا گروه‌بندی حل می‌شوند.</li>
-            <li><strong>جدول‌سازی:</strong> برای نظم دادن داده‌ها (مثلاً تقسیم‌های تکراری).</li>
-            <li><strong>معرفی متغیر و تشکیل معادله:</strong> برای مسائل نسبت، ترکیب و مسائل دارای مجهول.</li>
-            <li><strong>حدس و بررسی:</strong> وقتی راه حل مستقیم سخت است؛ اعداد کوچک تست می‌کنیم.</li>
-          </ul>
-          <p>هر تکنیک جای خودش را دارد؛ مهم است که با تمرین تشخیص دهی کدام روش بهتر است.</p>
-        </article>
-
-        <article id="examples" class="step">
-          <h2>مثال‌های حل شده (گام‌به‌گام)</h2>
-
-          <div class="lesson-block">
-            <h3>مثال 1 — تقسیم مساوی</h3>
-            <p>سؤال: ۱۵ سیب بین ۵ نفر تقسیم می‌شود. هر نفر چند سیب می‌گیرد؟</p>
-            <p><strong>راه حل:</strong> چون تقسیم مساوی است، از عمل تقسیم استفاده می‌کنیم: ۱۵ ÷ ۵ = ۳</p>
+        <aside class="right">
+          <div class="card">
+            <h3>آزمون سریع</h3>
+            <div id="quizArea">برای شروع آزمون روی «شروع آزمون درس» بزن.</div>
+            <div id="timer">۰۰:۰۰</div>
           </div>
 
-          <div class="lesson-block">
-            <h3>مثال 2 — تبدیل به معادله</h3>
-            <p>سؤال: سه برابر عددی به اضافه ۴ برابر ۲۱ می‌شود. آن عدد را پیدا کنید.</p>
-            <p><strong>راه حل:</strong> فرض کن عدد = x. سپس 3x + 4 = 21 → 3x = 17 → x = 17/3</p>
-            <p class="note">اگر خواستید عدد صحیح شود، احتمالا سوال دیگری مد نظر است؛ اما این روش کلیِ تبدیل مسئله به معادله است.</p>
+          <div class="card">
+            <h3>راهنما</h3>
+            <ul>
+              <li>پاسخ درست: +10 امتیاز</li>
+              <li>پاسخ غلط: −3 امتیاز</li>
+              <li>پاسخ سریع (&lt;10s): +5 امتیاز اضافه</li>
+            </ul>
           </div>
-
-        </article>
-
-        <article id="practice" class="step">
-          <h2>تمرین‌ها (تیکه‌تیکه)</h2>
-
-          <div class="exercise">
-            <p><strong>تمرین 1:</strong> در یک مدرسه ۳۲۰ دانش‌آموز هستند؛ ۱۲۰ نفر فوتبال دوست‌اند. چند نفر فوتبال دوست نیستند؟</p>
-            <input id="ex1" placeholder="جواب را بنویس">
-            <button onclick="checkExercise('ex1', 200)">ثبت</button>
-            <div class="feedback" id="fb-ex1"></div>
-          </div>
-
-          <div class="exercise">
-            <p><strong>تمرین 2:</strong> اگر 3 بسته، هر بسته 4 مداد داشته باشد، چند مداد داریم؟</p>
-            <input id="ex2" placeholder="جواب را بنویس">
-            <button onclick="checkExercise('ex2', 12)">ثبت</button>
-            <div class="feedback" id="fb-ex2"></div>
-          </div>
-
-          <div class="exercise">
-            <p><strong>تمرین 3:</strong> یک روپوش 45 هزار تومان است. اگر 5 روپوش بخواهیم چقدر می‌شود؟</p>
-            <input id="ex3" placeholder="جواب (تومان) را بنویس">
-            <button onclick="checkExercise('ex3', 225000)">ثبت</button>
-            <div class="feedback" id="fb-ex3"></div>
-          </div>
-        </article>
-
-        <article id="quiz" class="step">
-          <h2>آزمون کوتاه (سوالات سریع)</h2>
-
-          <div class="q">
-            <p>۱) در یک کلاس ۳۰ نفر هستند؛ 12 نفر فوتبالی‌اند. چند نفر فوتبالی نیستند؟</p>
-            <div class="options">
-              <button onclick="answerQuiz(1,18,this)">۱۸</button>
-              <button onclick="answerQuiz(1,16,this)">۱۶</button>
-              <button onclick="answerQuiz(1,20,this)">۲۰</button>
-            </div>
-          </div>
-
-          <div class="q">
-            <p>۲) 3 بسته × هر بسته 4 = ؟</p>
-            <div class="options">
-              <button onclick="answerQuiz(2,12,this)">۱۲</button>
-              <button onclick="answerQuiz(2,7,this)">۷</button>
-              <button onclick="answerQuiz(2,9,this)">۹</button>
-            </div>
-          </div>
-
-          <div class="q">
-            <p id="quizResult"></p>
-            <button onclick="resetQuiz()">شروع مجدد آزمون</button>
-          </div>
-        </article>
-
+        </aside>
       </section>
     </main>
 
     <footer>
-      <p>© ریاضی‌دان — فصل ۱ کامل و تیکه‌تیکه</p>
+      <p>© ریاضی‌دان — پایه ششم — آمادهٔ تبدیل به اپ</p>
     </footer>
   </div>
 
